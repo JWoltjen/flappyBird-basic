@@ -1,4 +1,4 @@
-import {updateBird} from './bird'
+import {updateBird} from './bird.js'
 
 document.addEventListener("keypress", handleStart, {once: true})
 
