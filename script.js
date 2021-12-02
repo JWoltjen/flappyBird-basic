@@ -1,10 +1,18 @@
+import {updateBird} from './bird'
+
 document.addEventListener("keypress", handleStart, {once: true})
 
 const title = document.querySelector("[data-title]")
 
 let lastTime
 function updateLoop(time){
-    console.log(time - lastTime)
+    if (lastTime == null){
+        lastTime = time
+        window.requestAnimationFrame(updateLoop)
+        return
+    }
+    const delta = time - lastTime
+    updateBird(delta)
     lastTime = time
     window.requestAnimationFrame(updateLoop)
 }
