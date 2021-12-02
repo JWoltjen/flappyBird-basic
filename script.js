@@ -1,5 +1,5 @@
 import {updateBird, setupBird, getBirdRect} from './bird.js'
-import {updatePipes, setupPipes } from './pipe.js'
+import {updatePipes, setupPipes, getPassedPipesCount } from './pipe.js'
 
 document.addEventListener("keypress", handleStart, {once: true})
 
@@ -38,7 +38,7 @@ function handleLose() {
     setTimeout(() => {
         title.classList.remove("hide")
         subtitle.classList.remove("hide")
-        subtitle.textContent = "0 Pipes"
+        subtitle.textContent =  `${getPassedPipesCount()} Pipes `
         document.addEventListener("keypress", handleStart, { once: true})
         }, 200)
 }
