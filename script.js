@@ -27,6 +27,7 @@ function checkLose(){
 function handleStart() {
     title.classList.add("hide")
     setupBird()
+    lastTime = null
     window.requestAnimationFrame(updateLoop)
 }
 
