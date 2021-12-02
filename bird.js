@@ -18,10 +18,13 @@ export function updateBird(delta){
     timeSinceLastJump += delta
 }
 
-function setTop(top) {
-    birdElem.style.setProperty("--bird-top", top)
+export function getBirdRect() {
+    return birdElem.getBoundingClientRect()
 }
 
+function setTop(top) {
+   return birdElem.style.setProperty("--bird-top", top)
+}
 
 function getTop() {
     return parseFloat(getComputedStyle(birdElem).getPropertyValue("--bird-top"))
