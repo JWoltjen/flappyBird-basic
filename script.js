@@ -31,7 +31,10 @@ function handleStart() {
 }
 
 function handleLose() {
-    title.classList.remove("hide")
-    subtitle.classList.remove("hide")
-    subtitle.textContent = "0 Pipes"
+    setTimeout(() => {
+        title.classList.remove("hide")
+        subtitle.classList.remove("hide")
+        subtitle.textContent = "0 Pipes"
+        document.addEventListener("keypress", handleStart, { once: true})
+        }, 200)
 }
