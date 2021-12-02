@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+  box-sizing: boder-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.title {
+  z-index: none;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: 5rem;
+}
+
+.hide {
+  display: none;
+}
