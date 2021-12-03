@@ -24,5 +24,7 @@ A dead-simple recreaction of flappy bird meant as a study for how Javascript fun
 ### how are collisons handled? 
 
  Each pipe's dimensions are calculated by the rects() method, which returns the top and bottom bounding client rects.The star player is the method getBoundingClientRect(), which returns a DOMREct object which provides information about the size of an element and its position relative to the viewport. This provides us with a starting point to detect if a collision between elements within the viewport has occurred. 
+ 
+ The isCollision function takes two rectangles as parameters. It then checks if any of the first shape's position within the viewport is less than the second shape's position. Then, inside the checkLose() function, a birdRect is declared. The insidePipe variable is created which is true if some of the pipe's positions indicate an overlap with any of the bird's dimensions: getPipeRects().some(rect => isCollision(birdRect, rect). It then also checks to see if birdRect.top or birdRect.bottom violates the dimensions of the top or bottom of the viewport. If either of these conditions is true, the function will evaluate to true and the game will end. 
 
 ### how is score kept? 
