@@ -17,10 +17,12 @@ A dead-simple recreaction of flappy bird.
 
 ### how is pipe motion handled? 
 
-  Arbitrary values for pipe hole height, pipe interval, pipe width, and pipe speed are  declared and are passed to all elements in the document object with the properties ("--pipe_width", and "--hole-height"). The time since last pipe is also set to the PIPE_INTERVAL global variable. 
+  Arbitrary values for pipe hole height, pipe interval, pipe width, and pipe speed are  declared and are passed to all elements in the document object with the properties ("--pipe_width", and "--hole-height"). The time since last pipe is also set to the PIPE_INTERVAL global variable. A bottom segment and a top segment are created. New pipes are created by appending a pipe div, and a top and bottom pipe segment to the DOM. A hole is created within the pipe through a random number generator. 
   
-  Just like bird, the updatePipes() function runs whenever the browser is repainted, and the delta is added to the timeSinceLastPipe variable. If the time is greater than pipe interval, a new pipe will be created. New pipes are created by appending a pipe div, and a top and bottom pipe segment to the DOM. A hole is created within the pipe through a random number generator
+  Just like bird, the updatePipes() function runs whenever the browser is repainted, and the delta is added to the timeSinceLastPipe variable. If the time is greater than pipe interval, a new pipe will be created. 
 
 ### how are collisons handled? 
+
+Each pipe's dimensions are calculated by the rects() method, which returns the top and bottom bounding client rects. 
 
 ### how is score kept? 
