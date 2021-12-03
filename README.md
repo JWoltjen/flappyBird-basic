@@ -28,3 +28,5 @@ A dead-simple recreaction of flappy bird meant as a study for how Javascript fun
  The isCollision function takes two rectangles as parameters. It then checks if any of the first shape's position within the viewport is less than the second shape's position. Then, inside the checkLose() function, a birdRect is declared. The insidePipe variable is created which is true if some of the pipe's positions indicate an overlap with any of the bird's dimensions: getPipeRects().some(rect => isCollision(birdRect, rect). It then also checks to see if birdRect.top or birdRect.bottom violates the dimensions of the top or bottom of the viewport. If either of these conditions is true, the function will evaluate to true and the game will end. 
 
 ### how is score kept? 
+
+All data in games like this seems to be updated in the updateX functions (updateBird, updatePipes). 
