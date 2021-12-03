@@ -17,12 +17,12 @@ A dead-simple recreaction of flappy bird.
 
 ### how is pipe motion handled? 
 
-  Arbitrary values for pipe hole height, pipe interval, pipe width, and pipe speed are  declared and are passed to all elements in the document object with the properties ("--pipe_width", and "--hole-height"). The time since last pipe is also set to the PIPE_INTERVAL global variable. A bottom segment and a top segment are created. New pipes are created by appending a pipe div, and a top and bottom pipe segment to the DOM. A hole is created within the pipe through a random number generator. 
+  Arbitrary values for pipe hole height, pipe interval, pipe width, and pipe speed are  declared and are passed to all elements in the document object with the properties ("--pipe_width", and "--hole-height"). The time since last pipe is also set to the PIPE_INTERVAL global variable. A bottom segment and a top segment are created. New pipes are created by appending a pipe div, and a top and bottom pipe segment to the DOM. A hole is created within the pipe through a random number generator that takes two parameters, the HOLE_HEIGHT and the window.innerHeight. In this fashion, the game is responsive because sizes are tied to the window display. 
   
   Just like bird, the updatePipes() function runs whenever the browser is repainted, and the delta is added to the timeSinceLastPipe variable. If the time is greater than pipe interval, a new pipe will be created. New pipes are always created at the right side of the screen, which is handled with pipe.left = window.innerWidth so that it is responsive acoss screen sizes. Just like the bird, when they are ready to be displayed, document.body.append(pipeElem) adds them to the screen. Finally, in order to keep track of their values, the new pipe is pushed to the pipes array. 
 
 ### how are collisons handled? 
 
-Each pipe's dimensions are calculated by the rects() method, which returns the top and bottom bounding client rects. 
+ Each pipe's dimensions are calculated by the rects() method, which returns the top and bottom bounding client rects.The star player is the method getBoundingClientRect(), which returns a DOMREct object which provides information about the size of an element and its position relative to the viewport. This provides us with a starting point to detect if a collision between elements within the viewport has occurred. 
 
 ### how is score kept? 
