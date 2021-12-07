@@ -29,4 +29,4 @@ A dead-simple recreaction of flappy bird meant as a study for how Javascript fun
 
 ### how is score kept? 
 
-All data in games like this seems to be updated in the updateX functions (updateBird, updatePipes). 
+All data in games like this seems to be updated in the updateX functions (updateBird, updatePipes). The left position of the pipes is tracked as data. Once the pipe gets to the absolute left side of the screen, it is removed and the pipeCount is increased by one. 
